@@ -1,0 +1,12 @@
+<template>
+    <li class="slds-item">{item.Question__c}
+        <lightning-layout horizontal-align="spread">
+            <lightning-layout-item>
+                <div class="slds-m-right_x-large" style="font-size: 13px;"><span>{item.Question__c}</span></div>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-input type="toggle" label="Toggle Label" value="true" message-toggle-active="" message-toggle-inactive="" variant="label-hidden"></lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+    </li>
+</template>
