@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Checklist Form">
+        <p>Template used: {intemplate.Name}</p>
+        <p>Created On: {intemplate.Name}</p>
+    </lightning-card>
+    <template if:true={hasChecklistItems}>
+        ####{hasChecklistItems}
+        ####{checklistItems}
+        <lightning-card title="Template form">
+            <ul class="slds-has-dividers_bottom-space">
+                <template for:each={checklistItems} for:item="item">
+                    <c-chk-item-entry key={item.Id} item={item}></c-chk-item-entry>
+                </template>
+            </ul>    
+        </lightning-card>
+    </template>
+    <template if:true={_err}>
+        <p>Checklist template has no items. Try again later.</p>
+    </template>
+</template>

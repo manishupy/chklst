@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Checklist Template Search">
+        <div slot="footer">
+            <lightning-button label="Use Template" onclick={handleSelectTemplateClick}></lightning-button>
+        </div>
+        <div class="slds-card__body_inner">
+            <lightning-combobox label="Category" placeholder="Select Category" options={category} onchange={handleCategoryChange}></lightning-combobox>
+            <template if:true={hasTemplates}>
+                <lightning-combobox class="Template" label="Template" placeholder="Select Template" options={templates}></lightning-combobox>
+            </template>
+            <template if:true={_err}>{_err}</template>
+        </div>
+    </lightning-card>
+    <template if:true={_tmpl}>
+        <c-chk-entry-form intemplate={_tmpl}></c-chk-entry-form>
+    </template>
+    <lightning-card title="Testing LMS">
+        <lightning-input type="text" label="Message" name="message" value={msg}></lightning-input>
+        <lightning-button class="post-msg" label="Post Message" onclick={handlePostMessageClick}></lightning-button>
+    </lightning-card>
+</template>
